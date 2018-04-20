@@ -139,13 +139,11 @@ public class AnkiDroidWidgetSmall extends AppWidgetProvider {
                     dueCardsCount = counts[0];
                     eta = counts[1];
                     if (dueCardsCount <= 0) {
-                        if (dueCardsCount == 0) {
-                            updateViews.setViewVisibility(R.id.ankidroid_widget_small_finish_layout, View.VISIBLE);
-                        } else {
-                            updateViews.setViewVisibility(R.id.ankidroid_widget_small_finish_layout, View.INVISIBLE);
-                        }
+                        updateViews.setViewVisibility(R.id.ankidroid_widget_small_finish_layout, View.INVISIBLE);
                         updateViews.setViewVisibility(R.id.widget_due, View.INVISIBLE);
+                        updateViews.setViewVisibility(R.id.ankidroid_widget_small_button, View.INVISIBLE);
                     } else {
+                        updateViews.setViewVisibility(R.id.ankidroid_widget_small_button, View.VISIBLE);
                         updateViews.setViewVisibility(R.id.ankidroid_widget_small_finish_layout, View.INVISIBLE);
                         updateViews.setViewVisibility(R.id.widget_due, View.VISIBLE);
                         updateViews.setTextViewText(R.id.widget_due, Integer.toString(dueCardsCount));
